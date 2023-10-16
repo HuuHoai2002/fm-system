@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  @apply bg-gray-100;
+}
+
+@layer base {
+  body::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: transparent !important;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    @apply bg-gray-400 rounded-md;
+  }
+}
+
+.scrollbar-select::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-select::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+.scrollbar-select::-webkit-scrollbar-thumb {
+  @apply bg-gray-100 rounded-md;
+}
+
+.base-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.base-scrollbar::-webkit-scrollbar-track {
+  background-color: transparent !important;
+}
+
+.base-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-md;
+}
+
+.text-truncate-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
