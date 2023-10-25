@@ -47,13 +47,12 @@ const NotificationDropdown: React.FC = () => {
                 </span>
               </div>
             </DropdownItem>
-
             {notifications &&
-              notifications?.data?.results?.map((item) => (
+              (notifications?.data?.results?.map((item) => (
                 <DropdownItem key={item.id} onClick={() => handleOpen(item.id)}>
                   <NotificationCard data={item} />
                 </DropdownItem>
-              ))}
+              )) as any)}
           </DropdownSection>
         </DropdownMenu>
       </Dropdown>
