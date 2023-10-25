@@ -68,6 +68,15 @@ const schema = yup.object().shape({
 });
 
 const EditPropertyClient: React.FC = () => {
+  const {} = useAuth({
+    roles: [Role.ADMIN],
+    onForbidden: {
+      callback: () => {
+        notFound();
+      },
+    },
+  });
+
   const {
     control,
     watch,
@@ -83,15 +92,6 @@ const EditPropertyClient: React.FC = () => {
   const { fields, append, remove } = useFieldArray({
     control,
     name: "options",
-  });
-
-  const {} = useAuth({
-    roles: [Role.ADMIN],
-    onForbidden: {
-      callback: () => {
-        notFound();
-      },
-    },
   });
 
   const router = useRouter();

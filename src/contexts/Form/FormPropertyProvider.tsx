@@ -189,11 +189,8 @@ export const FormPropertyProvider: React.FC<PropsWithChildren> = ({
                 </div>
               </ModalBody>
               <ModalFooter>
-                <Button color="danger" variant="light" onPress={handleClose}>
+                <Button color="primary" variant="light" onPress={handleClose}>
                   Đóng
-                </Button>
-                <Button color="primary" onPress={handleClose}>
-                  Chọn
                 </Button>
               </ModalFooter>
             </>

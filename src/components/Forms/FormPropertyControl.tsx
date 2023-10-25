@@ -19,6 +19,7 @@ interface FormPropertyControlProps {
   setValue: UseFormSetValue<IBaseCreateForm>;
   onRemoveProperty: (index: number) => void;
   isDragging: boolean;
+  isDisabled: boolean;
   dragHandleProps: DraggableProvidedDragHandleProps | undefined | null;
 }
 
@@ -30,6 +31,7 @@ const FormPropertyControl: React.FC<FormPropertyControlProps> = ({
   setValue,
   isDragging,
   dragHandleProps,
+  isDisabled,
 }) => {
   const _uuid = React.useMemo(() => uuid(), []);
 
@@ -101,6 +103,7 @@ const FormPropertyControl: React.FC<FormPropertyControlProps> = ({
                   onRemoveProperty(index);
                   handleRemoveProperty(_uuid);
                 }}
+                isDisabled={isDisabled}
               >
                 <HiOutlineTrash size={20} />
               </Button>

@@ -1,4 +1,10 @@
-import { EFormResponseStatus, EFormStatus, PropertyType } from "./enums";
+import {
+  EFormResponseStatus,
+  EFormStatus,
+  ENotificationFrom,
+  ENotificationTo,
+  PropertyType,
+} from "./enums";
 
 export interface Token {
   access_token: string;
@@ -264,4 +270,18 @@ export interface IFormResponseDetail {
   };
   response_properties: IResponseProperty[];
   processes: IResponseProcess[];
+}
+
+export interface INotification {
+  id: string;
+  title: string;
+  content: string;
+  is_read: boolean;
+  from: ENotificationFrom;
+  to: ENotificationTo;
+  form_response_id?: string;
+  receiver_id?: string;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at?: Date;
 }

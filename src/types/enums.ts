@@ -27,3 +27,15 @@ export enum FormResponseProcessStatus {
   COMPLETED = "COMPLETED",
   REJECTED = "REJECTED",
 }
+
+export enum ENotificationFrom {
+  SYSTEM = "SYSTEM",
+  ADMIN = "ADMIN",
+  MANAGER = "MANAGER",
+}
+
+export enum ENotificationTo {
+  ALL = "ALL",
+  ACCOUNT = "ACCOUNT",
+  DEPARTMENT = "DEPARTMENT",
+}

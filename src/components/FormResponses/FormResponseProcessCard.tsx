@@ -1,9 +1,10 @@
 import { IResponseProcess } from "@/types/all";
 import { EFormResponseStatus } from "@/types/enums";
-import { Tooltip, User } from "@nextui-org/react";
+import { User } from "@nextui-org/react";
 import classNames from "classnames";
 import moment from "moment";
 import React from "react";
+import Swal from "sweetalert2";
 import FormReponseStatusBadge from "./FormResponseStatusBadge";
 
 interface FormResponseProcessCardProps {
@@ -24,6 +25,16 @@ const FormResponseProcessCard: React.FC<FormResponseProcessCardProps> = ({
     form_processing_step,
     rejected_reason,
   } = data;
+
+  const onShowRejectedReason = () => {
+    Swal.fire({
+      icon: "info",
+      title: "Lý do từ chối",
+      text: rejected_reason,
+      confirmButtonText: "Đóng",
+    });
+  };
+
   return (
     <div>
       <div
@@ -79,17 +90,19 @@ const FormResponseProcessCard: React.FC<FormResponseProcessCardProps> = ({
                       Lý do từ chối:
                     </span>
                     <span className="font-medium text-orange-500 text-truncate-1">
-                      <Tooltip content={rejected_reason}>
-                        <span className="cursor-pointer">
-                          Xem lý do bị từ chối
-                        </span>
-                      </Tooltip>
+                      <span
+                        className="cursor-pointer hover:opacity-80"
+                        onClick={onShowRejectedReason}
+                      >
+                        Xem lý do bị từ chối
+                      </span>
                     </span>
                   </div>
                 </div>
               )}
             </div>
           </div>
+
           <div className="w-[2px] bg-gray-200 h-auto"></div>
 
           <div className="flex-1">

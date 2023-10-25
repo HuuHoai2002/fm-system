@@ -28,4 +28,8 @@ export const ApiEndpoint = {
 
   // Form Response
   formResponses: "/api/v1/form/responses",
+
+  // Notification
+  notifications: "/api/v1/me/get-notifications",
+  notificationDetail: "/api/v1/me/get-notifications",
 };

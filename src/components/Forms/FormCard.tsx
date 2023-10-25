@@ -85,9 +85,12 @@ const FormCard: React.FC<FormCardProps> = ({ form, ...props }) => {
                   className={classNames(
                     "px-2 py-1 rounded-md select-none shrink-0 leading-none text-xs font-medium",
                     {
-                      "bg-gray-100": form.status === EFormStatus.DRAFT,
-                      "bg-blue-100": form.status === EFormStatus.PUBLISHED,
-                      "bg-green-100": form.status === EFormStatus.ARCHIVED,
+                      "bg-gray-500 text-white":
+                        form.status === EFormStatus.DRAFT,
+                      "bg-blue-500 text-white":
+                        form.status === EFormStatus.PUBLISHED,
+                      "bg-green-500 text-white":
+                        form.status === EFormStatus.ARCHIVED,
                     }
                   )}
                 >

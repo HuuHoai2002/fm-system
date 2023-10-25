@@ -46,6 +46,7 @@ const FormPropertiesDnd: React.FC<FormPropertiesDndProps> = ({
                         index={index}
                         onRemoveProperty={removeProperty}
                         isDragging={isDragging}
+                        isDisabled={index === 0}
                         dragHandleProps={provided.dragHandleProps}
                       />
                     </div>

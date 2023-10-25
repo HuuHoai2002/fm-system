@@ -36,7 +36,8 @@ http.interceptors.response.use(
         if (typeof window !== undefined) {
           Swal.fire({
             icon: "warning",
-            title: "Quyền truy cập bị hạn chế đối với tài nguyên này!",
+            title:
+              "Quyền truy cập của tài khoản bị hạn chế đối với tài nguyên này!",
             text: error.response?.data?.message || "",
             confirmButtonText: "Đóng",
             allowOutsideClick: false,
